@@ -6,12 +6,12 @@ model, and the newer Stevens & Taatgen (2015) model.
 In addition, you can run a model that counts, and a small time estimation example.
 
 The Prisoner's dilemma Stevens model has three implementations that demonstrate the different
-ways in which you can use ACT-R.
-
-The ACT-R core files can be used for your own models and your own application.
+ways in which you can use ACT-R. The first version loads in text file with the ACT-R model in ACT-R syntax.
+The second version implements the model run in Swift, but adheres to the standard production cycle in ACT-R.
+The third version just uses the modules of ACT-R that are useful the the behavior of the model.
 
 <h3>What is implemented?</h3>
-The implementation is limited to a subset of the buffers. It implements =goal>, =imaginal>, =retrieval>, =temporal> as you might expect it. It implements =visual-location> and =visual>, but instead of defining a visicon in your code, you have to create a part of the UI that ACT-R is allowed to see (see subitizing example for details). It has a =partial> buffer for partial matching separate from regular retrieval.
+The implementation is limited to a subset of the buffers. It implements =goal>, =imaginal>, =retrieval>, =temporal> as you might expect it. It has a =partial> buffer for partial matching separate from regular retrieval.
 
 The Declarative Memory class also has implementations for blended retieval and partial blended retrieval. These are not yet hooked up to the production system yet, but you can call the functions separately, or modify the ACT-R code so that it uses those function instead of regular retrieval.
 
@@ -26,9 +26,7 @@ The following ACT-R commands are implemented: add-dm, spp, sgp, p, goal-focus, s
 The current implementation supports declarative learning (adding new chunks, and baselevel learning), but not procedural learning (utility learning and production compilation).
 
 <h3>The Model class</h3>
-The Model class is the main class to use to build a model. You can either subclass it and add some model-specific functions in the subclass, or just use it as it is. Typically you create an instance of Model or its subclass, load in an ACT-R model from a textfile, and then run the model until it takes an action.
-
-For some models that will be enough (including the example Prisoner's dilemma). In other cases you migh want to manipulate other classes directly.
+The Model class is the main class to use to build a model. Given that SwiftUI works with structs as models, you have to create a struct that reads our the relevant parts of the Model class. See the example for the Prisoner's dilemma in which the PDModelx files have that role. Note that SwiftUI cannot see changes in the Model class, but it can see changes in the Model struct, which it needs to keep the interface up-to-date.
 
 <h4> Relevant methods and instance variables in Model </h4>
 
