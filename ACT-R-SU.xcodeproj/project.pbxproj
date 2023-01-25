@@ -75,6 +75,7 @@
 		B874F1F329814664003741D5 /* PDModelGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDModelGeneral.swift; sourceTree = "<group>"; };
 		B874F1F529816310003741D5 /* ModelInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInteractionView.swift; sourceTree = "<group>"; };
 		B874F1F7298163BF003741D5 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		B874F1F929816A29003741D5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B88849C029754DC4006713B4 /* PDModel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDModel1.swift; sourceTree = "<group>"; };
 		B898D9B1295CA808001BB8D1 /* ChunkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkDetailView.swift; sourceTree = "<group>"; };
 		B8A0CF2C295C46FB0092B9FF /* ACT-R-SU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ACT-R-SU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +163,7 @@
 		B8A0CF2E295C46FB0092B9FF /* ACT-R-SU */ = {
 			isa = PBXGroup;
 			children = (
+				B874F1F929816A29003741D5 /* README.md */,
 				B8B344622975DFE900D64E92 /* Views */,
 				B8A0CF2F295C46FB0092B9FF /* ACT_R_SUApp.swift */,
 				B8A0CF82295C4D5A0092B9FF /* DemoModel.swift */,
