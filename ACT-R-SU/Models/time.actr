@@ -1,0 +1,30 @@
+(add-dm
+    (timegoal isa goal target 20)
+)
+
+(p start-timer
+    =goal>
+        isa goal
+        timer nil
+==>
+    =goal>
+      timer start
+    +temporal>
+        isa time
+)
+
+(p time-is-up
+    =goal>
+        isa goal
+        - timer nil
+        target =target
+    =temporal>
+        isa time
+        >= ticks =target
+    ==>
+    +temporal>
+        isa clear
+    -goal>
+    )
+
+(goal-focus timegoal)
