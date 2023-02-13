@@ -22,7 +22,7 @@ struct PDModel3: PDModelProtocol {
     /// Part of the contents of DM that can needs to be displayed in the interface
     var dmContent: [PublicChunk] = []
     /// Boolean that states whether the model is waiting for an action.
-    var waitingForAction = true
+    var waitingForAction = true 
     /// String that is displayed to show the outcome of a round
     var feedback = ""
     /// Amount of points the model gets
@@ -40,6 +40,7 @@ struct PDModel3: PDModelProtocol {
     /// - Parameter filename: filename to be loaded (extension .actr is added by the function)
     func loadModel(filename: String) {
         model.reset()
+        model.waitingForAction = true
     }
     
     /// Enum to represent the choices. It is always good to use enums for internal representation, because
@@ -96,12 +97,13 @@ struct PDModel3: PDModelProtocol {
             model.time += 1.0 + latency
         }
             update()
-        
+        waitingForAction = true
     }
     
     /// Reset the model and the game
     mutating func reset() {
         model.reset()
+        model.waitingForAction = true
         modelScore = 0
         playerScore = 0
         feedback = ""

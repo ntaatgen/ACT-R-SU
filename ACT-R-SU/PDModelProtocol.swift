@@ -47,6 +47,6 @@ extension PDModelProtocol {
             count += 1
         }
         dmContent.sort { $0.activation > $1.activation }
-        waitingForAction = model.waitingForAction
+        waitingForAction = true
     }
 }
