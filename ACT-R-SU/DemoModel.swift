@@ -67,10 +67,47 @@ class DemoModel: ObservableObject {
     
     // MARK: - Intent(s)
     
+    private var startTime = Date()
+    private var timer: Timer?
+    
     func choose(action: String) {
-        if model.waitingForAction {
-            model.choose(playerAction: action)
+        if currentModel != .timeModel {
+            if model.waitingForAction {
+                model.choose(playerAction: action)
+            } else {
+                return
+            }
         }
+        switch feedback {
+        case "Start": // user just pressed the start button
+            startTime = Date() // record the start time
+            model.feedback = "Stop" // Wait until user presses stop
+            
+            //
+        case "Stop": // user just ended the interval
+            let elapsedTime = Double(Date().timeIntervalSince(startTime))
+            print("\(elapsedTime) has passed")
+            model.model.run(maxTime: elapsedTime)
+            let chunk = model.model.generateNewChunk()
+            chunk.setSlot(slot: "isa", value: "waiting-for-stop")
+            model.model.buffers["action"] = chunk
+            model.model.run()
+            model.update()
+            model.feedback = "Reproduce"
+        case "Reproduce":
+            let modelStartTime = model.model.time
+            model.model.run()
+            model.update()
+            let modelRunTime = model.model.time - modelStartTime
+            model.feedback = "Waiting..."
+            timer = Timer.scheduledTimer(withTimeInterval: modelRunTime, repeats: false, block: {_ in self.model.feedback = "Done"})
+        case "Done":
+            model.reset()
+        default:
+            break
+        
+        }
+        
     }
     
     func switchModel() {
@@ -94,8 +131,9 @@ class DemoModel: ObservableObject {
             model = PDModelGeneral()
             model.loadModel(filename: "count")
         case .timeModel:
-            model = PDModelGeneral()
+            model = PDModelTime()
             model.loadModel(filename: "time")
+            model.run()
         }
         model.update()
     }

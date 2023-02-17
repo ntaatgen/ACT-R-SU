@@ -22,7 +22,8 @@ import Foundation
 /// it is harder to debug the model.
 ///
 ///
-struct PDModelGeneral: PDModelProtocol {
+
+struct PDModelTime: PDModelProtocol {
     /// The trace from the model
     var traceText: String = ""
     /// The model code
@@ -32,7 +33,7 @@ struct PDModelGeneral: PDModelProtocol {
     /// Boolean that states whether the model is waiting for an action.
     var waitingForAction = false
     /// String that is displayed to show the outcome of a round
-    var feedback = ""
+    var feedback = "Start"
     /// Amount of points the model gets
     var modelreward = 0
     /// Amount of points the player gets
@@ -43,6 +44,7 @@ struct PDModelGeneral: PDModelProtocol {
     var playerScore = 0
     /// The ACT-R model
     internal var model = Model()
+
     
     /// Function that loads in a text file that is interpreted as the model
     /// - Parameter filename: filename to be loaded (extension .actr is added by the function)
@@ -53,6 +55,7 @@ struct PDModelGeneral: PDModelProtocol {
     /// Run the model until done, or until it reaches a +action>
     mutating func run() {
         model.run()
+        update()
     }
     
     /// Reset the model and the game
@@ -60,8 +63,8 @@ struct PDModelGeneral: PDModelProtocol {
         model.reset()
         modelScore = 0
         playerScore = 0
-        feedback = ""
-    //    model.run()
+        feedback = "Start"
+        run()
     }
     
     /// Modify a slot in the action buffer
@@ -77,16 +80,18 @@ struct PDModelGeneral: PDModelProtocol {
             return false
         }
     }
-
+    
+    mutating func setFeedback(_ timer: Timer) {
+        self.feedback = "Stop"
+    }
+    
     /// Function that is executed whenever the player makes a choice. At that point
     /// the model has already made a choice, so the score can then be calculated,
     /// and can be shown in the display. The function also modifies the action chunk
     /// to reflect the outcome, and reruns the model for the next decision
     /// - Parameter playerAction: "coop" or "defect"
     mutating func choose(playerAction: String) {
-
-        model.run()
-        update()
+        
     }
 
 }

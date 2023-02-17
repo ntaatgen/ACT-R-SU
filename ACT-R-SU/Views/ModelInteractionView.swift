@@ -10,8 +10,10 @@ import SwiftUI
 struct ModelInteractionView: View {
     @ObservedObject var model: DemoModel
     var body: some View {
-        if model.currentModel == .countModel || model.currentModel == .timeModel {
+        if model.currentModel == .countModel {
             StartButtonView(model: model)
+        } else if model.currentModel == .timeModel{
+            TimeButtonView(model: model)
         } else {
             PrisonerView(model: model)
         }

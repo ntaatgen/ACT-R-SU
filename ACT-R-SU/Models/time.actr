@@ -1,22 +1,66 @@
 (add-dm
-    (timegoal isa goal target 20)
+    (timegoal isa goal state start)
 )
 
-(p start-timer
+(p wait-for-user
     =goal>
         isa goal
-        timer nil
-==>
+        state start
+    ==>
+        +action>
+            isa wait-for-start
     =goal>
-      timer start
+        state waiting-for-start
+)
+
+(p start-button-pressed
+    =goal>
+        isa goal
+        state waiting-for-start
+    =action>
+        isa wait-for-start
+    ==>
     +temporal>
         isa time
+    =goal>
+        state waiting-for-stop
+            
+)
+
+(p start-end-timed-interval
+    =goal>
+        isa goal
+        state waiting-for-stop
+    =action>
+        isa waiting-for-stop
+    =temporal>
+        isa time
+        ticks =target
+==>
+    =goal>
+      target =target
+      state start-reproduce
+    +action>
+        isa wait-for-start-reproduction
+)
+
+(p start-reproduction
+    =goal>
+        isa goal
+        state start-reproduce
+    =action>
+        isa wait-for-start-reproduction
+==>
+    +temporal>
+        isa time
+    =goal>
+        state reproduce
 )
 
 (p time-is-up
     =goal>
         isa goal
-        - timer nil
+        state reproduce
         target =target
     =temporal>
         isa time
@@ -25,6 +69,8 @@
     +temporal>
         isa clear
     -goal>
+    +action>
+        isa time-is-up
     )
 
 (goal-focus timegoal)

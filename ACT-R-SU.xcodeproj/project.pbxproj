@@ -11,6 +11,8 @@
 		B85ED3522976DB850048EFAC /* PDModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85ED3512976DB850048EFAC /* PDModelProtocol.swift */; };
 		B85ED3542976DD750048EFAC /* PublicChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85ED3532976DD750048EFAC /* PublicChunk.swift */; };
 		B861320329795B4F00D413E0 /* PDModel3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861320229795B4F00D413E0 /* PDModel3.swift */; };
+		B8621BEE299E67F20077BA46 /* PDModelTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8621BED299E67F20077BA46 /* PDModelTime.swift */; };
+		B8621BF0299E68A90077BA46 /* TimeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8621BEF299E68A90077BA46 /* TimeButtonView.swift */; };
 		B874F1F429814664003741D5 /* PDModelGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B874F1F329814664003741D5 /* PDModelGeneral.swift */; };
 		B874F1F629816310003741D5 /* ModelInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B874F1F529816310003741D5 /* ModelInteractionView.swift */; };
 		B874F1F8298163BF003741D5 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B874F1F7298163BF003741D5 /* StartButtonView.swift */; };
@@ -72,6 +74,8 @@
 		B85ED3512976DB850048EFAC /* PDModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDModelProtocol.swift; sourceTree = "<group>"; };
 		B85ED3532976DD750048EFAC /* PublicChunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicChunk.swift; sourceTree = "<group>"; };
 		B861320229795B4F00D413E0 /* PDModel3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDModel3.swift; sourceTree = "<group>"; };
+		B8621BED299E67F20077BA46 /* PDModelTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDModelTime.swift; sourceTree = "<group>"; };
+		B8621BEF299E68A90077BA46 /* TimeButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeButtonView.swift; sourceTree = "<group>"; };
 		B874F1F329814664003741D5 /* PDModelGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDModelGeneral.swift; sourceTree = "<group>"; };
 		B874F1F529816310003741D5 /* ModelInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInteractionView.swift; sourceTree = "<group>"; };
 		B874F1F7298163BF003741D5 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				B85ED3532976DD750048EFAC /* PublicChunk.swift */,
 				B88849C029754DC4006713B4 /* PDModel1.swift */,
 				B874F1F329814664003741D5 /* PDModelGeneral.swift */,
+				B8621BED299E67F20077BA46 /* PDModelTime.swift */,
 				B84172752975E92E00B78EC6 /* PDModel2.swift */,
 				B861320229795B4F00D413E0 /* PDModel3.swift */,
 				B8A0CF61295C4B2C0092B9FF /* ACT-R */,
@@ -250,6 +255,7 @@
 				B8A0CF5F295C49310092B9FF /* PrisonerView.swift */,
 				B874F1F529816310003741D5 /* ModelInteractionView.swift */,
 				B874F1F7298163BF003741D5 /* StartButtonView.swift */,
+				B8621BEF299E68A90077BA46 /* TimeButtonView.swift */,
 				B898D9B1295CA808001BB8D1 /* ChunkDetailView.swift */,
 			);
 			path = Views;
@@ -404,6 +410,7 @@
 				B8A0CF72295C4B2C0092B9FF /* BufferCondition.swift in Sources */,
 				B8A0CF7E295C4B2C0092B9FF /* Chunk.swift in Sources */,
 				B861320329795B4F00D413E0 /* PDModel3.swift in Sources */,
+				B8621BEE299E67F20077BA46 /* PDModelTime.swift in Sources */,
 				B8A0CF71295C4B2C0092B9FF /* SlotAction.swift in Sources */,
 				B8A0CF74295C4B2C0092B9FF /* Procedural.swift in Sources */,
 				B8A0CF5A295C49030092B9FF /* HomeView.swift in Sources */,
@@ -421,6 +428,7 @@
 				B8A0CF7B295C4B2C0092B9FF /* Support.swift in Sources */,
 				B8A0CF83295C4D5A0092B9FF /* DemoModel.swift in Sources */,
 				B8A0CF5E295C49210092B9FF /* DMView.swift in Sources */,
+				B8621BF0299E68A90077BA46 /* TimeButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +595,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,6 +625,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
