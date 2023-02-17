@@ -9,7 +9,7 @@ import SwiftUI
 
 /// Show the model's text and a Button to reset the model
 struct ModelView: View {
-    @ObservedObject var model: DemoModel
+    @ObservedObject var model: DemoViewModel
 
     var body: some View {
         VStack {

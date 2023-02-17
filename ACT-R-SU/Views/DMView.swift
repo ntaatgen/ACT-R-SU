@@ -10,7 +10,7 @@ import SwiftUI
 /// Show the contents of declarative memory. The list shows the chunk names with their activation (ChunkView)
 /// If you click on a link, you get the detailed view (ChunkDetailView, in a separate file)
 struct DMView: View {
-    @ObservedObject var model: DemoModel
+    @ObservedObject var model: DemoViewModel
     
     var body: some View {
         NavigationView {

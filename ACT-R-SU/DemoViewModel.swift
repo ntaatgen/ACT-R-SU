@@ -1,5 +1,5 @@
 //
-//  DemoModel.swift
+//  DemoViewModel.swift
 //  ACT-R-SU
 //
 //  Created by Niels Taatgen on 28/12/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class DemoModel: ObservableObject {
+class DemoViewModel: ObservableObject {
     
     @Published private var model: PDModelProtocol
     

@@ -9,7 +9,7 @@ import SwiftUI
 
 /// Main model view: shows five tabs that have their own views
 struct MainACTRView: View {
-    @ObservedObject var prisonerGame: DemoModel
+    @ObservedObject var prisonerGame: DemoViewModel
     var body: some View {
         TabView {
             HomeView(model: prisonerGame)
@@ -38,7 +38,7 @@ struct MainACTRView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let model = DemoModel()
+        let model = DemoViewModel()
         return MainACTRView(prisonerGame: model)
     }
 }

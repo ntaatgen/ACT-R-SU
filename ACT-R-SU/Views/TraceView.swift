@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TraceView: View {
-    @ObservedObject var model: DemoModel
+    @ObservedObject var model: DemoViewModel
     
     var body: some View {
         

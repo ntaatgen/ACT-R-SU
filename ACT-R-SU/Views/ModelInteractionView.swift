@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ModelInteractionView: View {
-    @ObservedObject var model: DemoModel
+    @ObservedObject var model: DemoViewModel
     var body: some View {
         if model.currentModel == .countModel {
             StartButtonView(model: model)

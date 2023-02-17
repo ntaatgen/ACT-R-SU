@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct ACT_R_SUApp: App {
-    let game = DemoModel()
+    let game = DemoViewModel()
     var body: some Scene {
         WindowGroup {
             MainACTRView(prisonerGame: game)

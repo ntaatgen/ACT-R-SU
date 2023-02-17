@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartButtonView: View {
-    @ObservedObject var model: DemoModel
+    @ObservedObject var model: DemoViewModel
     var body: some View {
         Button("Start the model") {
             model.run()
