@@ -78,6 +78,10 @@ class DemoModel: ObservableObject {
                 return
             }
         }
+        /// We have to do this as part of the ViewModel, which is ackward, but timers do not work very well in structs
+        /// The reason is that the timer passes a message to an object, so a reference to an object is needed which is not
+        /// possible in structs.
+        ///
         switch feedback {
         case "Start": // user just pressed the start button
             startTime = Date() // record the start time
@@ -105,7 +109,6 @@ class DemoModel: ObservableObject {
             model.reset()
         default:
             break
-        
         }
         
     }

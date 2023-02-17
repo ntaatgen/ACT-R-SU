@@ -81,10 +81,6 @@ struct PDModelTime: PDModelProtocol {
         }
     }
     
-    mutating func setFeedback(_ timer: Timer) {
-        self.feedback = "Stop"
-    }
-    
     /// Function that is executed whenever the player makes a choice. At that point
     /// the model has already made a choice, so the score can then be calculated,
     /// and can be shown in the display. The function also modifies the action chunk
