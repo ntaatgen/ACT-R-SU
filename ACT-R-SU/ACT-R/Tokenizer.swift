@@ -34,7 +34,7 @@ class Tokenizer
     }
     
     class func isWhitespace(_ c: Character) -> Bool {
-        return (c==" " || c=="\n" || c=="\r" || c=="\t")
+        return (c==" " || c=="\n" || c=="\r" || c=="\t" || c=="\r\n")
     }
     
     func nextToken()  {
@@ -46,7 +46,7 @@ class Tokenizer
         /// First handle comments
         while (c != nil && (c! == ";" || c! == "#")) {
             if (c==";") {
-                while (c != nil && c! != "\n" && c! != "\r") { nextChar() }
+                while (c != nil && c! != "\n" && c! != "\r" && c! != "\r\n") { nextChar() }
             } else if (c! == "#") {
                 if (c != nil) { nextChar() } // "#"
                 if (c != nil) { nextChar() } // "|"
